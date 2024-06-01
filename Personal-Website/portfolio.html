@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Felicia Stevany Lewa Personal Website</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Logo -->
+  <link href="assets/img/WebIcon.png" rel="icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">MyWebsite.</a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a class="active" href="about.html">About</a></li>
+            <li><a class="active" href="resume.html">Resume</a></li>
+            <li><a class="active " href="portfolio.html">Portfolio</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+        <div class="container">
+          <div class="row" id="projectsContainer">
+            <div class="col-sm-12">
+              <div class="title-box text-center">
+                <h3 class="title-a">
+                  Portfolio
+                </h3>
+                <p class="subtitle-a">
+                  Here are my several projects that I've made.
+                </p>
+                <div class="line-mf"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  <script type="application/json" id="project-data">
+    {
+      "projects": [
+        {
+            "name": "Pong Game",
+            "description": "My first project is to create a Pong Game using a C# programming language. It is a multiplayer game. This game have several features, such as intro, main game, and game over.",
+            "image": "assets/img/pong.png",
+            "category": "ALP Alpro",
+            "date": "Jan. 2022"
+          
+        },
+        {
+            "name": "Cinema",
+            "description": "This project is about to create a booking ticket system for cinema. I used winform on C# programming language. On this project, we can see all the movies that playing now, book now, choose the time to watch, and reserve ticket.",
+            "image": "assets/img/cinema.png",
+            "category": "Cinema",
+            "date": "April. 2023"
+          
+        },
+        {
+            "name": "Biocare Hospital",
+            "description": "This is a project about hospital's system for their patients, doctors, nurses, and administration. There are lot of features, such as insert/remove data, searching patient data, book a room, buying a medicine, showing a bill, and patient history",
+            "image": "assets/img/biocare.png",
+            "category": "ALP Appdev",
+            "date": "Juni. 2023"
+          
+        },
+        {
+            "name": "POS Bebek Lumer mbak Siti",
+            "description": "Making a POS project is my recent project. This project allow us to login using the username and password, make new order, check order, payment, checking financial, input stock, and stock opname.",
+            "image": "assets/img/POS.png",
+            "category": "ALP SAD",
+            "date": "January. 2024"
+        }
+      ]
+    }
+  </script>
+  <script>
+    // Mendapatkan data JSON
+    var projectData = JSON.parse(document.getElementById("project-data").innerHTML);
+
+    // Fungsi untuk menghasilkan HTML dari data proyek
+    function generateProjectsData(project) {
+    return `
+        <div class="col-md-4">
+            <div class="work-box">
+              <a href="${project.image}" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="${project.image}" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">${project.name}</h2>
+                    <h2 class="w-desc">${project.description}</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">${project.category}</span> / <span class="w-date">${project.date}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    `;
+    }
+
+    // Mengisi container proyek dengan data proyek
+    var projectsContainer = document.getElementById("projectsContainer");
+    projectData.projects.forEach(function (project) {
+      projectsContainer.innerHTML += generateProjectsData(project);
+    });
+  </script><!-- End Portfolio Section -->
+
+   <!-- ======= Footer ======= -->
+   <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>MyWebsite.</strong>. All Rights Reserved</p>
+            <div class="credits">
+              <a>Have a nice day.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+</body>
+</html>
